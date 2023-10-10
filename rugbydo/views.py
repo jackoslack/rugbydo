@@ -28,4 +28,4 @@ def get_name(request):
         form = NameForm()
 """
     form = NameForm()
-    return render(request, "name.html", {"form": form})
+    return render(request, "templates/name.html", {"form": form})
