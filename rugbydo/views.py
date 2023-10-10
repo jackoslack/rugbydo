@@ -27,5 +27,5 @@ def get_name(request):
     else:
         form = NameForm()
 """
-
+    form = NameForm()
     return render(request, "name.html", {"form": form})
