@@ -7,7 +7,7 @@ from .forms import NameForm
 
 def home_page_view(request):
 
-    return HttpResponse("Hello, Fred!")
+    return HttpResponse("Hello, Freddo!")
 
 
 def get_name(request):
