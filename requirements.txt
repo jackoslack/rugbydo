@@ -8,6 +8,8 @@ asgiref==3.7.2
     # via django
 django==4.2.6
     # via -r requirements.in
+django-environ==0.11.2
+    # via -r requirements.in
 gunicorn==21.2.0
     # via -r requirements.in
 packaging==23.2
