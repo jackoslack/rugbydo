@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 from .forms import NameForm
 
-def show_settings(request)
+def show_settings(request):
     from django.conf import settings
     bdir = settings.BASE_DIR
     return HttpResponse(bdir)
