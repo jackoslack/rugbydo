@@ -21,10 +21,13 @@ from .views import home_page_view
 
 from .views import get_name
 
+from .views import show_settings
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", home_page_view, name="home"),
+    path("bdir", show_settings, name="bdir"),
     path("name", get_name, name="name"),
     
 ]
