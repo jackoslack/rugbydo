@@ -14,8 +14,17 @@ def home_page_view(request):
 
     return HttpResponse("Hello, Freddo!")
 
+def get_name(request):
 
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        return render(request, 'name.html', {'name': name})
+    else:
+        return render(request, 'name.html')
+
+"""
 def get_name(request):
     # if this is a POST request we need to process the form data
     
     return render(request, "name.html")
+"""
