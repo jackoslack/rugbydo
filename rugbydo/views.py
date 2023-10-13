@@ -26,6 +26,7 @@ def get_name(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
+            name = form.name()
             return render(request, "name.html", {"name": name})
 
     # if a GET (or any other method) we'll create a blank form
