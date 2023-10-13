@@ -10,9 +10,16 @@
             {{ form }}
             <input type="submit" value="Submit">
         </form>
-
-        {% if  name %}
-            {{ name }}
-        {% endif %}
+        
+    {% if name %}
+        <h1>Hello, {{ name }}!</h1>
+    {% else %}
+        <form method="post">
+            {% csrf_token %}
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" name="name">
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
     </body>
 </html>
