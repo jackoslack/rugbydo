@@ -5,12 +5,6 @@
     </head>
     <body>
 
-        <form action="/name" method="post">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Submit">
-        </form>
-        
     {% if name %}
         <h1>Hello, {{ name }}!</h1>
     {% else %}
