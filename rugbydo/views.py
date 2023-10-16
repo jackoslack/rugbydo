@@ -10,7 +10,7 @@ def show_settings(request):
     #bdir = settings.BASE_DIR
     bdir = settings
 
-    return render(request, 'set.html', {'bdir':bdir})
+    return render(request, 'bdir.html', {'bdir':bdir})
 
 def home_page_view(request):
 
