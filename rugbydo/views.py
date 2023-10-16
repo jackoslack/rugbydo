@@ -8,7 +8,7 @@ from .forms import NameForm
 def show_settings(request):
     from django.conf import settings
     #bdir = settings.BASE_DIR
-    bdir = settings.all()
+    bdir = settings()
 
     return render(request, 'bdir.html', {'bdir': bdir})
 
