@@ -6,9 +6,14 @@ from django.shortcuts import render
 from .forms import NameForm
 
 def show_settings(request):
+    
     from django.conf import settings
+    my_settings = []
+    for set in settings:
+        my_settings.append(set)
+
     #bdir = settings.BASE_DIR
-    bdir = settings()
+    bdir = my_settings
 
     return render(request, 'bdir.html', {'bdir': bdir})
 
