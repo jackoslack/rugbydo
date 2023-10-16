@@ -8,9 +8,9 @@ from .forms import NameForm
 def show_settings(request):
     from django.conf import settings
     #bdir = settings.BASE_DIR
-    bdir = settings
+    bdir = settings.all()
 
-    return render(request, 'bdir.html', {'bdir':bdir})
+    return render(request, 'bdir.html', {'bdir': bdir})
 
 def home_page_view(request):
 
