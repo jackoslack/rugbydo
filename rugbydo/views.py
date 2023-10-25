@@ -24,6 +24,7 @@ def get_name(request):
         return render(request, 'name.html', {'name': name})
     else:
         return render(request, 'name.html')
+    
 
 """
 def get_name(request):
