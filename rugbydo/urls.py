@@ -23,7 +23,6 @@ from .views import get_name
 
 from .views import show_settings
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     #
@@ -32,3 +31,11 @@ urlpatterns = [
     path("name", get_name, name="name"),
     
 ]
+
+# Use static() to add url mapping to serve static files during development (only)
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
