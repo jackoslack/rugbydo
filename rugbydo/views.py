@@ -11,6 +11,7 @@ def show_settings(request):
 
     bdir = settings.BASE_DIR
     static = settings.STATIC_URL
+    #auto_field = settings.DEFAULT_AUTO_FIELD
 
     return render(request, 'bdir.html', {'bdir': bdir}, {'static': static })
 
