@@ -1,16 +1,328 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        
-    </head>
-    <body>
+<html>
 
-    {% if name %}
-        <h1>Hello, {{ name }}!</h1>
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    {% if request.path == '/mlist/' %}
+
+        <meta name="description" content="Lists all Matches played by Avoca Beach Rugby">
+        <title class="mytitle">Matchlist</title>
+
+    {% elif request.get_full_path == '/current/?&gender=F' %}
+
+        <meta name="description" content="Lists all current Womens players at Avoca Beach Rugby">
+        <title class="mytitle">Current Womens Players</title>
+
+    {% elif request.get_full_path == '/current/?&gender=M' %}
+
+        <meta name="description" content="Lists all current Male players at Avoca Beach Rugby">
+        <title class="mytitle">Current Mens Players</title>
+
+    {% elif request.path == '/rugbystats/' %}
+
+        <meta name="description" content="Lists all current players at Avoca Beach Rugby">
+        <title class="mytitle">All Players (past and present)</title>
+
+    {% elif request.path == '/pview/' %}
+
+        <meta name="description" content="Player Details">
+        <title class="mytitle">Player Detail</title>
+
+    {% elif request.path == '/player/' %}
+
+        <meta name="description" content="Player Details">
+        <title class="mytitle">Player Detail</title>
+
+    {% elif request.path == '/clubpoints/' %}
+
+        <meta name="description" content="Details points scored by all players at Avoca Beach Rugby">
+        <title class="mytitle">Points Score (All Players)</title>
+
+    {% elif request.get_full_path == '/clubpoints/?&gender=M' %}
+
+        <meta name="description" content="Details points scored by Male players at Avoca Beach Rugby">
+        <title class="mytitle">Points Scored (Mens Players)</title>
+
+   {% elif request.get_full_path == '/clubpoints/?&gender=F' %}
+
+        <meta name="description" content="Details points scored by Womens players at Avoca Beach Rugby">
+        <title class="mytitle">Points Scored (Womens Players)</title>
+
+    {% elif request.path == '/player_honours/' %}
+
+        <meta name="description" content="Details representative honours at International, State and local level by individual players from Avoca Beach Rugby$
+        <title class="mytitle">Representative Honours by Player</title>
+
+
+    {% elif request.path == '/honours_by_level/' %}
+
+        <meta name="description" content="Lists representative honours of players from Avoca Beach Rugby by level of representation">
+        <title class="mytitle">Representative Honours by Level</title>
+
+   {% elif request.path == '/seasonlist/' %}
+
+        <meta name="description" content="Summary of coaches, managers and results for all seasons and grades of  Avoca Beach Rugby">
+        <title class="mytitle">Season List</title>
+
     {% else %}
-        
-        <h1>Hello there!</h1>
+
     {% endif %}
 
-    </body>
+    {% block title %}
+        <title class="mytitle">Avoca Sharks Rugby</title>
+    {% endblock %}
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/andablog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/landing1.css' %}"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous"></script>
+
+<!-- Bootstrap files (jQuery first, then Popper.js, then Bootstrap JS) -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+<style>
+
+html, body {
+    margin: 0;
+    width: 100%;
+}
+
+.menuicon {
+    max-width:200px ;
+    }
+
+@media screen and (max-width: 400px){
+
+        .nav  {
+            position: absolute ;
+            left: 250px ;
+            padding-left: 40px ;
+        }
+        .menuicon  {
+            max-width:150px;
+        }
+
+        .navbar-collapse.in {
+            overflow-y: visible ;
+            position:absolute ;
+            left: 250px ;
+            top: 10px ;
+            vertical-align: top ;
+        }
+        .dropdown-menu .dropdown-toggle:after{
+            border-top: .3em solid transparent;
+            border-right: 0;
+            border-bottom: .3em solid transparent;
+            border-left: .3em solid;
+            float: auto;
+            font-size: 1rem;
+            bg-color: #444;
+        }
+        .dropdown-menu .dropdown-menu{
+                margin-left:0; 
+                margin-right: 0;
+                font-size: .3rem;
+        }
+        .dropdown-menu li{
+                position: relative;
+                font-size: .5rem;
+        }
+        .nav-item .submenu{ 
+                float:right;
+                display: none;
+                position: static;
+                font-size: 1rem;
+                left:100%; top:-7px;
+                bg-color:#444;
+        }
+        .nav-item .submenu-left{ 
+                right:100%; left:auto;
+        }
+        .nav-link  {
+                line-height:15px ;
+                font-size: .8rem ;
+        }
+
+
+        .dropdown-menu > li:hover{ background-color: #f1f1f1 }
+        .dropdown-menu > li:hover > .submenu{
+                display: block;
+        }
+
+        .custom-toggler.navbar-toggler {
+                border-color: rgb(255,255,255);
+        }
+
+.navbar-dark .navbar-toggler {
+  border:0;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  display:inline-block;
+  font:normal normal normal 14px/1 FontAwesome;
+  font-size:inherit;
+  text-rendering:auto;
+  background-image:none;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.navbar-dark .navbar-toggler-icon:before {
+  content:"\f07b";
+}
+
+.navbar-dark .navbar-toggler[aria-expanded=true] .navbar-toggler-icon:before {
+  content:"\f07c";
+}
+}
+
+</style>
+
+<!--
+
+<script type="text/javascript">
+/// some script
+
+// jquery ready start
+$(document).ready(function() {
+	// jQuery code
+
+	//////////////////////// Prevent closing from click inside dropdown
+    $(document).on('click', '.dropdown-menu', function (e) {
+      e.stopPropagation();
+    });
+
+    // make it as accordion for smaller screens
+    if ($(window).width() < 768) {
+	  	$('.dropdown-menu a').click(function(e){
+	  		e.preventDefault();
+	        if($(this).next('.submenu').length){
+	        	$(this).next('.submenu').toggle();
+	        }
+	        $('.dropdown').on('hide.bs.dropdown', function () {
+			   $(this).find('.submenu').hide();
+			})
+	  	});
+	}
+	
+}); // jquery end
+</script>
+
+-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H4SHTEXEN4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H4SHTEXEN4');
+
+  ga('send', 'pageview', location.pathname );
+
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H4SHTEXEN4"></script>
+
+</head>
+
+<body style="background:#000; ">
+
+
+<div class="container-fluid" style=" padding-top:10px ; float:none; width:100%;  margin-right:10px;  background:#000;">
+
+<div class="row" style="">
+    <div class="col-2" style=" display:block">
+        <div  style="padding-laft: 5px;  float:left; padding-below:10px;  color:#ffffff; bgcolor:#000000; ">
+            <img  class="menuicon" style="bgcolor:#000000; " src="{{ '/static/images/ABRC-logo_wide_shadow-web.webp' }}"/>
+        </div>
+        <div  style="padding-left:5px; padding-bottom:10px; color:#ffffff; float:left;" >
+            <h5>Player&nbspDatabase</h5>
+        </div>
+    </div>
+        <div class="col-1;">---</div>
+
+    <div class="col-9" style="display:inline; float:right; ">
+    <nav class="navbar navbar-expand-lg navbar-dark " style="float:right; padding-top:50px;">
+
+<!--         <a class="navbar-brand" href="#">Brand</a> -->
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+             <span class="navbar-toggler-icon" style="font-weight: bold;  float:right;"></span>
+         </button>
+
+         <div class="collapse navbar-collapse" id="main_nav" style="">
+
+             <ul class="navbar-nav"  style=" ">
+	         <li class="nav-item active"> <a class="nav-link" href="https://avocabeachrugby.com.au/">ABRC Home</a> </li>
+	         <li class="nav-item active"> <a class="nav-link" href="/">About</a> </li>
+	         <li class="nav-item active"><a class="nav-link" href="/mlist"> Matches</a></li>
+	         <li class="nav-item dropdown active">
+		     <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">Players </a>
+	                 <ul class="dropdown-menu">
+		             <li><a class="dropdown-item" href="/rugbystats">All Players</a></li>
+		             <li><a class="dropdown-item" href="/current/?&gender=M">Current &raquo Men</a></li>
+                             <li><a class="dropdown-item" href="/current/?&gender=F">Current &raquo Women</a></li>
+                             <li><a class="dropdown-item" href="/player_search">Player Search</a></li> 
+	                 </ul>
+                 </li>
+ 
+                 <li class="nav-item dropdown active">
+                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Points</a>
+                         <ul class="dropdown-menu">
+                             <li><a class="dropdown-item" href="/clubpoints/?&gender=M">Men</a></li>
+                             <li><a class="dropdown-item" href="/clubpoints/?&gender=F">Women</a></li>
+                         </ul>
+                 </li>
+                 <li class="nav-item dropdown active">
+                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Reps</a>
+                         <ul class="dropdown-menu">
+                             <li><a class="dropdown-item" href="/player_honours/">Honours By Player</a> </li>
+                             <li><a class="dropdown-item"  href="/honours_by_level/">Honours By Level</a> </li>
+                         </ul>
+                 </li>
+                 <li class="nav-item active"> <a class="nav-link" href="/seasonlist">Seasons</a></li>
+
+                 {% if user.is_authenticated %}
+                 
+                 <li class="nav-item active"> <a class="nav-link" href="/accounts/logout">Logout<div style="color:white;">{{ user }}<i class='fa fa-user'></i></div></a></li>
+
+                 {% else %}
+
+                 <li class="nav-item active"> <a class="nav-link" href="/accounts/login">Login</a></li>
+
+                 {% endif %}
+
+
+
+             </ul>
+
+         </div> <!-- navbar-collapse.// -->
+
+     </nav>
+     </div>
+
+</div>
+
+            {% block content %} {% endblock %}
+<script>
+    $("#collapse navbar-collapse a:not(.dropdown-item)").click(function() {
+      $("#collapse navbar-collapse").collapse("hide");
+    });
+</script>
+
+</body>
 </html>
