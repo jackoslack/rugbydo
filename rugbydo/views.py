@@ -15,7 +15,8 @@ def show_settings(request):
 
 def home_page_view(request):
 
-    return HttpResponse("Hello, Freddo!")
+    
+    return render(request, 'home.html')
 
 def get_name(request):
 
