@@ -10,8 +10,9 @@ def show_settings(request):
     from django.conf import settings
 
     bdir = settings.BASE_DIR
+    static = settings.STATIC_URL
 
-    return render(request, 'bdir.html', {'bdir': bdir})
+    return render(request, 'bdir.html', {'bdir': bdir}, {'static': static })
 
 def home_page_view(request):
 
