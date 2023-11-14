@@ -15,8 +15,9 @@ def show_settings(request):
     static_files_directory = settings.STATICFILES_DIRS
     project_root = settings.PROJECT_ROOT
 
-    return render(request, 'bdir.html', {'bdir': bdir},
-                  {'static_url': static_url}, 
+    return render(request, 'bdir.html', 
+                  {'bdir': bdir},
+                  #{'static_url': static_url}, 
                   #{'static_files_directory': static_files_directory}, 
                   #{'project_root': project_root}
         )
