@@ -8,12 +8,12 @@ from .forms import NameForm
 def show_settings(request):
     
     from django.conf import settings
-
+    
     try:
         bdir = settings.BASE_DIR
     except:
         bdir = "Error"
-
+    """
     try:
         static_url = settings.STATIC_URL
     except:
@@ -23,7 +23,7 @@ def show_settings(request):
     #    static_root = settings.STATIC_ROOT
     #except:
     #    static_root = "Error"
-    """
+    
     try:
         static_files_directory = settings.STATICFILES_DIRS
     except:
@@ -34,6 +34,11 @@ def show_settings(request):
     except:
         project_root = "Error"
     """
+
+    static_files_directory = ""
+    static_url = ""
+    project_root = ""
+
 
     return render(request, 'bdir.html', 
                   {'static_url': static_url}, 
