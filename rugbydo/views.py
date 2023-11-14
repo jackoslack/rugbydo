@@ -8,29 +8,30 @@ from .forms import NameForm
 def show_settings(request):
     
     from django.conf import settings
-    if settings.BASE_DIR:
+
+    try:
         bdir = settings.BASE_DIR
-    else:
+    except:
         bdir = "Error"
 
-    if settings.STATIC_URL:
+    try:
         static_url = settings.STATIC_URL
-    else:
+    except:
         static_url = "Error"
 
-    if settings.STATIC_ROOT:
+    try:
         static_root = settings.STATIC_ROOT
-    else:
+    except:
         static_root = "Error"
 
-    if settings.STATICFILES_DIRS:
+    try:
         static_files_directory = settings.STATICFILES_DIRS
-    else:
+    except:
         static_files_directory = "Error"
 
-    if settings.PROJECT_ROOT:
+    try:
         project_root = settings.PROJECT_ROOT
-    else:
+    except:
         project_root = "Error"
 
     return render(request, 'bdir.html', 
