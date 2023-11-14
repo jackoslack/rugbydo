@@ -8,7 +8,7 @@ from .forms import NameForm
 def show_settings(request):
     
     from django.conf import settings
-
+    if settings.
     bdir = settings.BASE_DIR
     static_url = settings.STATIC_URL
     static_root = settings.STATIC_ROOT
@@ -16,8 +16,8 @@ def show_settings(request):
     project_root = settings.PROJECT_ROOT
 
     return render(request, 'bdir.html', 
-                  #{'static_url': static_url}, 
-                  #{'static_files_directory': static_files_directory}, 
+                  {'static_url': static_url}, 
+                  {'static_files_directory': static_files_directory}, 
                   {'project_root': project_root},
                   {'bdir': bdir},
         )
