@@ -12,11 +12,26 @@ def show_settings(request):
         bdir = settings.BASE_DIR
     else:
         bdir = "Error"
-        
-    static_url = settings.STATIC_URL
-    static_root = settings.STATIC_ROOT
-    static_files_directory = settings.STATICFILES_DIRS
-    project_root = settings.PROJECT_ROOT
+
+    if settings.STATIC_URL:
+        static_url = settings.STATIC_URL
+    else:
+        static_url = "Error"
+
+    if settings.STATIC_ROOT:
+        static_root = settings.STATIC_ROOT
+    else:
+        static_root = "Error"
+
+    if settings.STATICFILES_DIRS:
+        static_files_directory = settings.STATICFILES_DIRS
+    else:
+        static_files_directory = "Error"
+
+    if settings.PROJECT_ROOT:
+        project_root = settings.PROJECT_ROOT
+    else:
+        project_root = "Error"
 
     return render(request, 'bdir.html', 
                   {'static_url': static_url}, 
