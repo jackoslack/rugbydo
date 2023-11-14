@@ -23,7 +23,7 @@ def show_settings(request):
     #    static_root = settings.STATIC_ROOT
     #except:
     #    static_root = "Error"
-"""
+    """
     try:
         static_files_directory = settings.STATICFILES_DIRS
     except:
