@@ -17,9 +17,9 @@ def show_settings(request):
 
     return render(request, 'bdir.html', 
                   #{'static_url': static_url}, 
-                  #{'static_files_directory': static_files_directory}, 
+                  {'static_files_directory': static_files_directory}, 
                   {'project_root': project_root},
-                  #{'bdir': bdir},
+                  {'bdir': bdir},
         )
 
 def home_page_view(request):
