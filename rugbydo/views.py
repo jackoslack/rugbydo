@@ -18,8 +18,8 @@ def show_settings(request):
     return render(request, 'bdir.html', 
                   #{'bdir': bdir},
                   {'static_url': static_url}, 
-                  {'static_files_directory': static_files_directory}, 
-                  #{'project_root': project_root}
+                  #{'static_files_directory': static_files_directory}, 
+                  {'project_root': project_root}
         )
 
 def home_page_view(request):
