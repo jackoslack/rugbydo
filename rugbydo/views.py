@@ -10,10 +10,17 @@ def show_settings(request):
     from django.conf import settings
 
     bdir = settings.BASE_DIR
-    static = settings.STATIC_URL
-    auto_field = settings.DEFAULT_AUTO_FIELD
+    static_url = settings.STATIC_URL
+    static_root = settings.STATIC_ROOT
+    static_files_directory = settings.STATICFILES_DIR
+    project_root = settings.PROJECT_ROOT
 
-    return render(request, 'bdir.html', {'static': static})
+    return render(request, 'bdir.html', 
+                  {'bdir': bdir},
+                  {'static_url': static_url}, 
+                  {'static_files_directory': static_files_directory}, 
+                  {'project_root': project_root},
+)
 
 def home_page_view(request):
 
