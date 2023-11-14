@@ -12,7 +12,7 @@ def show_settings(request):
     bdir = settings.BASE_DIR
     static_url = settings.STATIC_URL
     static_root = settings.STATIC_ROOT
-    static_files_directory = settings.STATICFILES_DIR
+    static_files_directory = settings.STATICFILES_DIRS
     project_root = settings.PROJECT_ROOT
 
     return render(request, 'bdir.html', 
