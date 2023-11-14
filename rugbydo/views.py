@@ -8,8 +8,11 @@ from .forms import NameForm
 def show_settings(request):
     
     from django.conf import settings
-    if settings.
-    bdir = settings.BASE_DIR
+    if settings.BASE_DIR:
+        bdir = settings.BASE_DIR
+    else:
+        bdir = "Error"
+        
     static_url = settings.STATIC_URL
     static_root = settings.STATIC_ROOT
     static_files_directory = settings.STATICFILES_DIRS
