@@ -1,0 +1,104 @@
+<!-- players/templates/index.html 25-6-21 -->
+
+{% extends "home.html" %}
+
+{% block content %}
+
+    <!-- Whole width panel -->
+
+    <div class="row justify-content-center">
+
+        <!-- Whole width Row -->
+
+        <div class="mycolumn2">
+
+            <!-- First Column in Row -->
+
+            <!-- <div align=center><img src="/static/images/40years.jpg"></div> -->
+
+            <div class='mytitle'>About the Database</div>
+
+            <div class="mycolumn2">
+
+            <div class="h5">
+                <p>
+                    This database contains {{ dataperiod }} years of player and match
+                    history.
+                </p>
+                <p>
+                We are continually trying to update and refine it to improve performance and ease of use.
+                </p>
+                <p>
+                If you have any corrections, suggested changes or knowledge of data which is missing, please call
+                0413635476.
+                </p>
+
+            </div>
+
+            <div class="row justify-content-center">
+
+                <!-- New Row in full width column -->
+
+                <div class="col-sm-5" align="left">
+
+                    <!-- First column in row (left) -->
+
+                    <h4>Dynamic content</h4>
+                    <p>Current record counts:</p>
+                    <ul>
+                        <li><strong>Year Data:</strong> 1975-{% now "Y" %}</li>
+                        <li><strong>Players:</strong> {{ num_players }}</li>
+                        <li><strong>Matches:</strong> {{ num_matches }}</li>
+                        <li><strong>Player Matches:</strong> {{ num_playermatches }}</li> 
+                        <li>Season data for 1975 - 2002 (aggregate only)</li>
+                        <li>Season data for 2003 - {% now "Y" %} (complete)</li>
+                    
+                    </ul>                
+
+                </div>                       
+                
+                <!-- End Left Column -->
+                
+                <!-- Small dividing column -->
+
+                <div class="col-sm-1" style=width:20%></div> 
+                
+                <!-- Right column -->
+
+                <div class="col-sm-6" align="left">      
+
+                    <h4>Data Still needed.</h4>
+                    <ul>
+                        <li>Player Photos</li>
+                        <li>Details of Team officials</li>
+                        <li>Representative data.</li>
+                        <li>Details of Juniors if still in existence.
+                    </ul>
+                    
+                    If you can contribute any of this, please contact 0413635476
+                </div>    
+                
+                <!-- End Right column -->
+
+            </div> 
+            
+            <!-- End Row -->
+
+        </div>  
+        
+        <!-- End Column -->
+        
+    </div>
+    
+    </div> <!-- End Row -->
+    
+    <div class="row justify-content-center">
+    
+        Note, Junior data is not comprehensive.<br><br>
+        
+    </div>
+
+{% endblock %}
+
+
+
