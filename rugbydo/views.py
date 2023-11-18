@@ -5,6 +5,11 @@ from django.shortcuts import render
 
 from .forms import NameForm
 
+def about(request); 
+      
+    return render(request, 'about.html')
+    
+
 def show_settings(request):
     
     from django.conf import settings
