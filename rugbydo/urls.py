@@ -21,6 +21,8 @@ from .views import home_page_view
 
 from .views import get_name
 
+from .views import about
+
 from .views import show_settings
 
 urlpatterns = [
