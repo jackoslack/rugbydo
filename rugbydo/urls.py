@@ -26,6 +26,7 @@ from .views import show_settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     #
+    path("about", about, name="about"),
     path("", home_page_view, name="home"),
     path("bdir", show_settings, name="bdir"),
     path("name", get_name, name="name"),
