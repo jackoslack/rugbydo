@@ -5,7 +5,8 @@ from django.shortcuts import render
 
 from .forms import NameForm
 
-def about(request); 
+def about(request):
+    
       
     return render(request, 'about.html')
     
