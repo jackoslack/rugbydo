@@ -40,7 +40,7 @@ def show_settings(request):
         project_root = "Error"
     """
 
-    static_files = settings.STATICFILES_DIR
+    static_files = settings.STATICFILES_DIRS
     static_url = ""
     project_root = ""
     bdir = settings.STATIC_URL
