@@ -13,32 +13,6 @@ def about(request):
 def show_settings(request):
     
     from django.conf import settings
-    """
-    try:
-        bdir = settings.BASE_DIR
-    except:
-        bdir = "Error"
-    
-    try:
-        static_url = settings.STATIC_URL
-    except:
-        static_url = "Error"
-
-    #try:
-    #    static_root = settings.STATIC_ROOT
-    #except:
-    #    static_root = "Error"
-    
-    try:
-        static_files_directory = settings.STATICFILES_DIRS
-    except:
-        static_files_directory = "Error"
-
-    try:
-        project_root = settings.PROJECT_ROOT
-    except:
-        project_root = "Error"
-    """
 
     staticfiles_dirs = settings.STATICFILES_DIRS
     static_url = settings.STATIC_URL
