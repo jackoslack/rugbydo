@@ -43,7 +43,7 @@ def show_settings(request):
     static_files_directory = ""
     static_url = ""
     project_root = ""
-    bdir = "Error"
+    bdir = settings.STATIC_URL
 
 
     return render(request, 'bdir.html', 
