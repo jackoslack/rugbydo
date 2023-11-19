@@ -1,1 +1,35 @@
 # CSS
+
+<style>
+.mycolumn2 {
+    /* min-width: 620px;*/ 
+    width: 100%;
+    min-height: 400px;
+    justify-content: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0px 20px 0 20px;
+    background-color: white;
+    display: block;
+    position: relative;
+    z-index: 1;
+   }
+   .mytitle {
+    min-width: 0px;
+    font-family: Helvetica;
+    font-variation: 16;
+    font-size: 26px;
+    justify-content: center;
+    text-align: center;
+    background-color: darkslategrey;
+    padding: 5px 0px 5px 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    color: white;
+    }
+
+
+</style>
