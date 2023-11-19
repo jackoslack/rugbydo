@@ -40,14 +40,17 @@ def show_settings(request):
         project_root = "Error"
     """
 
-    static_files = settings.STATICFILES_DIRS
-    static_url = ""
-    project_root = ""
-    bdir = settings.STATIC_URL
+    staticfiles_dirs = settings.STATICFILES_DIRS
+    static_url = settings.STATIC_URL
+    project_root = settings.PROJECT_ROOT
+    static_root = settings.STATIC_ROOT
 
 
     return render(request, 'bdir.html', 
-                  {'bdir': bdir, 'static_files': static_files},
+                  {'static_root': static_root, 
+                   'staticfiles_dirs': staticfiles_dirs, 
+                   'static_url': static_url,
+                   'project_root': project_root},
         )
 
 def home_page_view(request):
