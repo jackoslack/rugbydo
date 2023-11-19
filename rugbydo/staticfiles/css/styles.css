@@ -33,7 +33,7 @@ html, body {
             border-left: .3em solid;
             float: auto;
             font-size: 1rem;
-            bg-color: #444;
+            background-color: #444;
         }
         .dropdown-menu .dropdown-menu{
                 margin-left:0; 
@@ -50,7 +50,7 @@ html, body {
                 position: static;
                 font-size: 1rem;
                 left:100%; top:-7px;
-                bg-color:#444;
+                background-color:#444;
         }
         .nav-item .submenu-left{ 
                 right:100%; left:auto;
@@ -114,7 +114,7 @@ html, body {
 .mytitle {
     min-width: 0px;
     font-family: Helvetica;
-    font-variation: 16;
+    font-variant: 16;
     font-size: 26px;
     justify-content: center;
     text-align: center;
