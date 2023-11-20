@@ -5,7 +5,7 @@
 {% block content %}
 
     {% if name %}
-        <h1>Well Hello Hello, {{ name }}!</h1>
+        <title class="mytitle">Well Hello Hello, {{ name }}!</title>
     {% else %}
         <form method="post">
             {% csrf_token %}
