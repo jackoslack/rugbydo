@@ -120,7 +120,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static') 
 STATICFILES_DIRS = [os.path.join(PROJECT_ROOT, 'staticfiles')]
 
-STATIC_URL = '/static/'
+STATIC_URL = './static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
