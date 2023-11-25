@@ -35,7 +35,7 @@ def players(request):
 
     title = "Holding area for player stats."
     
-    return render(request, 'players.html', {"title" = title })
+    return render(request, 'players.html', {"title" : title })
 
 def get_name(request):
 
