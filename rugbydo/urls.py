@@ -32,7 +32,6 @@ urlpatterns = [
     path("", home_page_view, name="home"),
     path("bdir", show_settings, name="bdir"),
     path("name", get_name, name="name"),
-    path("matches", matches, name="matches"),
     path("/rugbystats", players, name="players"),
     path("/clubpoints/?&gender=M", points, name="points"),
     path("reps", reps, name="reps"),
