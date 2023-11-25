@@ -28,9 +28,14 @@ def show_settings(request):
         )
 
 def home_page_view(request):
-
-    
+  
     return render(request, 'home.html')
+
+def players(request):
+
+    title = "Holding area for player stats."
+    
+    return render(request, 'players.html', {"title" = title })
 
 def get_name(request):
 
