@@ -37,6 +37,7 @@ urlpatterns = [
     path("bdir", show_settings, name="bdir"),
     path("name", get_name, name="name"),
     path("players", players, name="players"),
+    path("/mlist", matches, name="matches"),
     
     
 ]
