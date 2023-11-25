@@ -37,6 +37,18 @@ def players(request):
     
     return render(request, 'players.html', {"title" : title })
 
+def matches(request):
+
+    title = "Matches"
+  
+    return render(request, 'home.html', { "title": title })
+
+def reps(request):
+
+    title = "Reps"
+  
+    return render(request, 'home.html', { "title": title })
+
 def get_name(request):
 
     if request.method == 'POST':
