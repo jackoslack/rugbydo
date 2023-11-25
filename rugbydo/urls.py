@@ -17,13 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import home_page_view
+from .views import *
 
-from .views import get_name
+#from .views import home_page_view
 
-from .views import about
+#from .views import get_name
 
-from .views import show_settings
+#from .views import about
+
+#from .views import players
+
+#from .views import show_settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
