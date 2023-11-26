@@ -54,7 +54,7 @@ def points(request, gender="None"):
     else:
         gender = ""
     
-    title = "Player Carreer Points"
+    title = "Player Career Points"
     
     return render(request, 'points.html', {"title" : title , "gender" : gender})
 
