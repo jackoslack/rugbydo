@@ -36,7 +36,8 @@ urlpatterns = [
     path("", home_page_view, name="home"),
     path("bdir", show_settings, name="bdir"),
     path("name", get_name, name="name"),
-    path("players/{gender: 'None'}", players, name="players"),
+    path("players/gender", players, name="players"),
+    path("players/", players, name="players"),
     path("mlist", mlist, name="mlist"),
     
     
