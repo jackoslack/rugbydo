@@ -39,7 +39,7 @@ def players(request):
 
 def mlist(request):
 
-    title = "Matche List"
+    title = "Match List"
   
     return render(request, 'matches.html', { "title": title })
 
