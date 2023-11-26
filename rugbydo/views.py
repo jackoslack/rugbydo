@@ -33,13 +33,13 @@ def home_page_view(request):
 
 def players(request):
 
-    title = "Players"
+    title = "Player Stats"
     
     return render(request, 'players.html', {"title" : title })
 
 def mlist(request):
 
-    title = "Matches"
+    title = "Matche List"
   
     return render(request, 'matches.html', { "title": title })
 
