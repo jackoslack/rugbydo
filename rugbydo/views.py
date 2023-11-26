@@ -44,6 +44,20 @@ def players(request, gender="None"):
     
     return render(request, 'players.html', {"title" : title , "gender" : gender})
 
+
+def points(request, gender="None"):
+
+    if gender == "M":
+        gender = "Mens"
+    elif gender == "F":
+        gender = "Womens"
+    else:
+        gender = ""
+    
+    title = "Player Carreer Points"
+    
+    return render(request, 'points.html', {"title" : title , "gender" : gender})
+
 def mlist(request):
 
     title = "Match List"

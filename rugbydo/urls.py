@@ -38,7 +38,9 @@ urlpatterns = [
     path("name", get_name, name="name"),
     path("players/<str:gender>", players, name="players"),
     path("players/", players, name="players"),
-    path("mlist", mlist, name="mlist"),
+    path("points/", points, name="points"),
+    path("points/", points, name="points"),
+    path("points", points, name="points"),
     
     
 ]
