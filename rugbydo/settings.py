@@ -121,8 +121,10 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATICFILES_DIRS = [os.path.join(PROJECT_ROOT, 'staticfiles')]
 
 STATIC_URL = 'static/'
-
-STATIC_URL = 'rugbydo/static/'
+try :
+    import dev_settings
+except:
+    pass
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
