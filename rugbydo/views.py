@@ -31,9 +31,7 @@ def home_page_view(request):
   
     return render(request, 'home.html')
 
-def players(request, gender = ""):
-
-    
+def players(request, gender):
 
     title = "Player Stats"
     
