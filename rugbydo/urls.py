@@ -40,6 +40,9 @@ urlpatterns = [
     path("players/", players, name="players"),
     path("points/", points, name="points"),
     path("points/<str:gender>", points, name="points"),
+    path("mlist", mlist, name="matches"),
+    
+    
     
 ]
 
