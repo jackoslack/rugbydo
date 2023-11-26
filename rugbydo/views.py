@@ -33,9 +33,11 @@ def home_page_view(request):
 
 def players(request, gender = ""):
 
+    
+
     title = "Player Stats"
     
-    return render(request, 'players.html', {"title" : title })
+    return render(request, 'players.html', {"title" : title , "gender" : gender})
 
 def mlist(request):
 
