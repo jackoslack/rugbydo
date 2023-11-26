@@ -123,7 +123,7 @@ STATICFILES_DIRS = [os.path.join(PROJECT_ROOT, 'staticfiles')]
 STATIC_URL = 'static/'
 
 try :
-    import dev_settings
+    from dev_settings import *
 except:
     pass
 
