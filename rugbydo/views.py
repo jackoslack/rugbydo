@@ -33,6 +33,13 @@ def home_page_view(request):
 
 def players(request, gender="None"):
 
+    if gender == "M":
+        gender = "Mens"
+    elif gender == "F":
+        gender = "Womens"
+    else:
+        gender = ""
+    
     title = "Player Stats"
     
     return render(request, 'players.html', {"title" : title , "gender" : gender})
