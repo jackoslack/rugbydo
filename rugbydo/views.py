@@ -37,7 +37,7 @@ def players(request):
     
     return render(request, 'players.html', {"title" : title })
 
-def matches(request):
+def mlist(request):
 
     title = "Matches"
   
