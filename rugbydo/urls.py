@@ -39,8 +39,8 @@ urlpatterns = [
     path("players/<str:gender>", players, name="players"),
     path("players/", players, name="players"),
     path("points/", points, name="points"),
-    path("points/", points, name="points"),
-    path("points", points, name="points"),
+    path("points/M", points, name="points"),
+    path("points/F", points, name="points"),
     
     
 ]
