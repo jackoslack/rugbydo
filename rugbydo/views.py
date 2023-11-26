@@ -33,7 +33,7 @@ def home_page_view(request):
 
 def players(request):
 
-    title = "Holding area for player stats."
+    title = "Players"
     
     return render(request, 'players.html', {"title" : title })
 
@@ -41,7 +41,7 @@ def mlist(request):
 
     title = "Matches"
   
-    return render(request, 'home.html', { "title": title })
+    return render(request, 'matches.html', { "title": title })
 
 def reps(request):
 
