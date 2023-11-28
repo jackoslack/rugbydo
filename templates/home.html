@@ -56,16 +56,20 @@
         <meta name="description" content="Details representative honours at International, State and local level by individual players from Avoca Beach Rugby$
         <title class="mytitle">Representative Honours by Player</title>
 
-
     {% elif request.path == '/honours_by_level/' %}
 
         <meta name="description" content="Lists representative honours of players from Avoca Beach Rugby by level of representation">
         <title class="mytitle">Representative Honours by Level</title>
 
-   {% elif request.path == '/seasonlist/' %}
+    {% elif request.path == '/seasonlist/' %}
 
         <meta name="description" content="Summary of coaches, managers and results for all seasons and grades of  Avoca Beach Rugby">
         <title class="mytitle">Season List</title>
+
+    {% elif request.path == '/photologue/gallery' %
+
+        <meta name="description" content="Photo Gallery">
+        <title class="mytitle">Photo Gallery</title>
 
     {% else %}
 
@@ -117,7 +121,7 @@ crossorigin="anonymous"></script>
             <img  class="menuicon" style="background-color:#000000; " src="{% static 'images/ABRC-menu-logo.png' %}"/>
         </div>
         <div  style="padding-left:5px; padding-bottom:10px; color:#ffffff; float:left;" >
-            <h5>Player&nbspDatabase</h5>
+            <h7>Player&nbspDatabase</h7>
         </div>
     </div>
         <div class="col-1;">---</div>
@@ -133,7 +137,7 @@ crossorigin="anonymous"></script>
          <div class="collapse navbar-collapse" id="main_nav">
 
              <ul class="navbar-nav">
-	         <li class="nav-item active"> <a class="nav-link" href="https://avocabeachrugby.com.au/">ABRC Home</a> </li>
+	         <li class="nav-item active"> <a class="nav-link" href="https://avocabeachrugby.com.au/">Home</a> </li>
 	         <li class="nav-item active"> <a class="nav-link" href="/about">About</a> </li>
 	         <li class="nav-item active"><a class="nav-link" href="/mlist"> Matches</a></li>
 	         <li class="nav-item dropdown active">
@@ -162,6 +166,8 @@ crossorigin="anonymous"></script>
                          </ul>
                  </li>
                  <li class="nav-item active"> <a class="nav-link" href="/seasonlist">Seasons</a></li>
+
+                 <li class="nav-item active"> <a class="nav-link" href="/photologue/gallery">Photos</a></li>
 
                  {% if user.is_authenticated %}
                  
