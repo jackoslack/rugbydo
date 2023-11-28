@@ -31,6 +31,12 @@ def home_page_view(request):
   
     return render(request, 'home.html')
 
+def photologue(request):
+
+    title = "Photo Gallery"
+  
+    return render(request, 'home.html',{ "title" : title})
+
 def players(request, gender="None"):
 
     if gender == "M":

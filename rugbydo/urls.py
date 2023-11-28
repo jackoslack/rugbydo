@@ -41,6 +41,8 @@ urlpatterns = [
     path("points/", points, name="points"),
     path("points/<str:gender>", points, name="points"),
     path("mlist", mlist, name="mlist"),
+    path("photologue", photologue, name="photologue"),
+    path("photologue/gallery", photologue, name="photologue"),
     
     
     
