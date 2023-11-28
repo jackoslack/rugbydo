@@ -35,7 +35,7 @@ def photologue(request):
 
     title = "Photo Gallery"
   
-    return render(request, 'home.html',{ "title" : title})
+    return render(request, 'gallery.html',{ "title" : title})
 
 def players(request, gender="None"):
 
