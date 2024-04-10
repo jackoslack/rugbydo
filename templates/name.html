@@ -1,0 +1,21 @@
+<!-- templates/name.html -->
+
+{% extends "home.html" %}
+
+{% block content %}
+
+<div class="mycolumn2">
+
+    {% if name %}
+        <title class="mytitle">Well Hello Hello, {{ name }}!</title>
+    {% else %}
+        <form method="post">
+            {% csrf_token %}
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" name="name">
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
+</div>
+    
+    {% endblock %}

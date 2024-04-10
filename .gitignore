@@ -2,4 +2,6 @@
 .DS_Store
 /.env
 /.venv
+/static/
 __pycache__
+dev_settings.py
