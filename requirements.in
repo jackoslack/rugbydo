@@ -1,4 +1,7 @@
 django
 django-environ
+django-import-export
 gunicorn
+pillow
 psycopg
+whitenoise
