@@ -4,3 +4,4 @@ django-import-export
 gunicorn
 pillow
 psycopg
+whitenoise
